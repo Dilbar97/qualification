@@ -1,0 +1,16 @@
+elastic_user_pass: h-1oENSL39xlIRSCOnG6
+
+#HTTP CA certificate SHA-256 fingerprint:
+elastic_ca: 6d12358aa523af80aa9c6ade415395528f1e963498982714a0e36dd7ad2dc693
+
+  ℹ️  Configure Kibana to use this cluster:
+    • Run Kibana and click the configuration link in the terminal when Kibana starts.
+  • Copy the following enrollment token and paste it into Kibana in your browser (valid for the next 30 minutes):
+    eyJ2ZXIiOiI4LjEwLjQiLCJhZHIiOlsiMTcyLjIxLjAuMjo5MjAwIl0sImZnciI6IjZkMTIzNThhYTUyM2FmODBhYTljNmFkZTQxNTM5NTUyOGYxZTk2MzQ5ODk4MjcxNGEwZTM2ZGQ3YWQyZGM2OTMiLCJrZXkiOiJPTU5ZUW9zQkRMcDdfZFMtd0VZdTpWMWU2a3dxVVJmdV94VktxNnlfY3dBIn0=
+
+  ℹ️ Configure other nodes to join this cluster:
+  • Copy the following enrollment token and start new Elasticsearch nodes with `bin/elasticsearch --enrollment-token <token>` (valid for the next 30 minutes):
+    eyJ2ZXIiOiI4LjEwLjQiLCJhZHIiOlsiMTcyLjIxLjAuMjo5MjAwIl0sImZnciI6IjZkMTIzNThhYTUyM2FmODBhYTljNmFkZTQxNTM5NTUyOGYxZTk2MzQ5ODk4MjcxNGEwZTM2ZGQ3YWQyZGM2OTMiLCJrZXkiOiJPc05ZUW9zQkRMcDdfZFMtd0VZdTprS2JoUlk5d1Q3eVJ3YndPcGI5N1h3In0=
+
+    If you're running in Docker, copy the enrollment token and run:
+    `docker run -e "ENROLLMENT_TOKEN=<token>" docker.elastic.co/elasticsearch/elasticsearch:8.10.4`

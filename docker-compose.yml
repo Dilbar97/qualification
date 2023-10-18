@@ -1,0 +1,21 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres
+    container_name: qual_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5455:5432"
+  redis:
+    image: redis:latest
+    restart: always
+    ports:
+      - "6380:6379"
+    environment:
+      - REDIS_PASSWORD=secret
+      - REDIS_PORT=6379
+      - REDIS_DATABASES=0
