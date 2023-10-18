@@ -1,0 +1,8 @@
+syntax="proto3";
+
+service Stream {
+  rpc Save(stream SaveRequest) returns (SaveResponse); // client-streaming RPC
+  rpc Save1(Save1Request) returns (stream Save1Response); // server-streaming RPC
+  rpc Save2(stream Save2Request) returns (stream Save2Response); // bidirectional-streaming RPC
+  rpc Save3(Save3Request) returns (Save3Response); // simple RPC
+}
