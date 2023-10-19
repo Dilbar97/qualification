@@ -9,6 +9,4 @@ import (
 
 func main() {
 	cmd.Execute()
-
-	//_ = http.ListenAndServe(":3333", nil)
 }

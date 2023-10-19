@@ -10,17 +10,17 @@ var goroutineCmd = &cobra.Command{
 	Use: "gor",
 
 	Run: func(cmd *cobra.Command, args []string) {
-		withChannel, err := cmd.Flags().GetBool("with-channel")
+		withChannel, err := cmd.Flags().GetBool("chan")
 		if err != nil {
 			return
 		}
 
-		withWG, err := cmd.Flags().GetBool("with-wg")
+		withWG, err := cmd.Flags().GetBool("wg")
 		if err != nil {
 			return
 		}
 
-		withMutex, err := cmd.Flags().GetBool("with-mutex")
+		withMutex, err := cmd.Flags().GetBool("mutex")
 		if err != nil {
 			return
 		}
@@ -31,7 +31,7 @@ var goroutineCmd = &cobra.Command{
 
 func init() {
 	rootCmd.AddCommand(goroutineCmd)
-	rootCmd.PersistentFlags().BoolP("with-channel", "c", false, "Run Goroutine with channel")
-	rootCmd.PersistentFlags().BoolP("with-wg", "w", false, "Run Goroutine with wait group")
-	rootCmd.PersistentFlags().BoolP("with-mutex", "m", false, "Run Goroutine with mutex")
+	rootCmd.PersistentFlags().BoolP("chan", "c", false, "Run Goroutine with channel")
+	rootCmd.PersistentFlags().BoolP("wg", "w", false, "Run Goroutine with wait group")
+	rootCmd.PersistentFlags().BoolP("mutex", "m", false, "Run Goroutine with mutex")
 }

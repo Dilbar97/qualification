@@ -1,0 +1,65 @@
+definitions:
+  qualification_internal_usecase_model.Product:
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+    type: object
+info:
+  contact: {}
+  description: This is a sample server celler server.
+  title: Swagger Example API
+  version: "1.0"
+paths:
+  /product:
+    get:
+      description: Method to search product
+      parameters:
+      - description: product name
+        in: query
+        name: name
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/qualification_internal_usecase_model.Product'
+    post:
+      description: Method to create product
+      parameters:
+      - description: Body
+        in: body
+        name: input
+        required: true
+        schema:
+          $ref: '#/definitions/qualification_internal_usecase_model.Product'
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+  /product/{id}:
+    get:
+      description: Method to get product
+      parameters:
+      - description: product id
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/qualification_internal_usecase_model.Product'
+  /products:
+    get:
+      description: Get All products
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/qualification_internal_usecase_model.Product'
+swagger: "2.0"
