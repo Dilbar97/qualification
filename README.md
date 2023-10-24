@@ -108,6 +108,7 @@
 # gRPC
 ## Реализовывать Stream на базе gRPC
 [stream.proto](proto%2Fstream.proto)
+https://github.com/Dilbar97/tages
 
 # RabbitMQ
 ## exchange
@@ -150,6 +151,6 @@
 # Разделять запуск приложение с помощью команд и Обрабатывать флаги запуска
 [goroutine.go](cmd%2Fgoroutine.go)
 
-sdcsdc
+sdcsdc eherjfherf
 
 

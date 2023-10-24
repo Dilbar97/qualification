@@ -27,7 +27,9 @@ func simpleGor() {
 
 func gorWithChannel() {
 	gorNums := make(chan int)
+	defer close(gorNums)
 	gorValues := make(chan string)
+	defer close(gorValues)
 
 	for i := 0; i < 10; i++ {
 		go func(i int) {
