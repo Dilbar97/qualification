@@ -1,7 +1,28 @@
-# Знать k8s на уровне Namespace/Deployment/Service/Pod
-## Namespace
+# YouTrack
+## Создавать и настраивать доски
+    https://comptest.youtrack.cloud/agiles/154-2/current
+## Создавать отчеты
+    https://youtrack.tages.ru/reports
+## Настраивать интеграцию YT - gitlab
+    https://comptest.youtrack.cloud/admin/vcs
+
+# Git
+## Знать полный git flow
+## Уметь работать с историей git'a
+## Схлопывать в один все коммиты в ветке
+    - git squash
+    - git rebase -i HEAD~2
+    - 
+## git cherry-pick
+## git submodule
+## git remote (больше одного репозитория)
+## git bare для полной копии
+
+# Инфраструктура
+## Знать k8s на уровне Namespace/Deployment/Service/Pod
+### Namespace
     Это область работы среды окружения
-## Deployment
+### Deployment
     - помогает:
         - разворачивать окружение
         - откатывать окружение при возникновении ошибки
@@ -9,11 +30,17 @@
     - можно указать:
         - кол-во реплик
         - стратегию
-## Service
+### Service
     - даёт доступ к полам извне
     - занимается балансировкой между подами
-## Pod
+### Pod
     - похож на контейнеры в докере, но в поде можно держать несколько контейнеров(в жизни не встречала такого)
+
+## Уметь работать на уровне SELECT/INSERT/UPDATE/DELETE в SQL базах данных
+[product.go](internal%2Frepository%2Fproduct.go)
+
+## Уметь работать в RabbitMQ/Kafka на уровне чтения и отправки вручную сообщений
+
 
 # FulltextSearch
     Используется индекс GIN
@@ -144,7 +171,7 @@
 ## Сквозное прокидывание request_id по каждому запросу
 
 # Devops
-## Envoy(настройка ratelimit и авторизацию через микросервис    
+## Envoy(настройка ratelimit и авторизацию через микросервис
     * показать из order-dev
 
 # Разделять запуск приложение с помощью команд и Обрабатывать флаги запуска
