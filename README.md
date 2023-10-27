@@ -14,7 +14,7 @@ https://comptest.youtrack.cloud/admin/vcs
     - ammend
 ## git cherry-pick
 ## git submodule
-## git remote (больше одного репозитория)
+[.gitmodules](.gitmodules)
 ## git bare для полной копии
 
 # Инфраструктура
@@ -55,7 +55,6 @@ https://comptest.youtrack.cloud/admin/vcs
     - Идеальный пример это map в Golang
     - Бакеты
     - Коллизия
-    - Допустимые типы ключа - срезы, мапы, функциии
 ## GIN
     - Используется для полнотекстового поиска
     - Механизм похож на B-Tree, только в элементах индекса хранится не ссылка, а набор ссылок
