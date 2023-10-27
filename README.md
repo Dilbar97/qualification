@@ -130,11 +130,11 @@ https://comptest.youtrack.cloud/admin/vcs
 [swagger.json](docs%2Fswagger.json)
 
 ## github.com/gorilla/mux
-[gen_swag.go](internal%2Fhandler%2Fgen_swag.go)
+[rest.go](internal%2Fhandler%2Frest.go)
 
 # gRPC
 ## Реализовывать Stream на базе gRPC
-[stream.proto](proto%2Fstream.proto)
+[stream.proto](qualification_proto%2Fproto%2Fstream.proto)
 
 # RabbitMQ
 ## exchange

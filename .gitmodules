@@ -1,0 +1,3 @@
+[submodule "qualification_proto"]
+	path = qualification_proto
+	url = https://github.com/Dilbar97/qualification_proto
