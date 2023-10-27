@@ -1,11 +1,27 @@
 # YouTrack
-## Интеграция с репозиторием
+## Создавать и настраивать доски
+https://comptest.youtrack.cloud/agiles/154-2/current
+## Создавать отчеты
+https://youtrack.tages.ru/reports
+## Настраивать интеграцию YT - gitlab
+https://comptest.youtrack.cloud/admin/vcs
 
+# Git
+## Уметь работать с историей git'a
+## Схлопывать в один все коммиты в ветке
+    - squash
+    - rebase -i
+    - ammend
+## git cherry-pick
+## git submodule
+## git remote (больше одного репозитория)
+## git bare для полной копии
 
-# Знать k8s на уровне Namespace/Deployment/Service/Pod
-## Namespace
+# Инфраструктура
+## Знать k8s на уровне Namespace/Deployment/Service/Pod
+### Namespace
     Это область работы среды окружения
-## Deployment
+### Deployment
     - помогает:
         - разворачивать окружение
         - откатывать окружение при возникновении ошибки
@@ -13,15 +29,21 @@
     - можно указать:
         - кол-во реплик
         - стратегию
-## Service
-    - даёт доступ к полам извне
+### Service
+    - даёт доступ к подам извне
     - занимается балансировкой между подами
-## Pod
+### Pod
     - похож на контейнеры в докере, но в поде можно держать несколько контейнеров(в жизни не встречала такого)
+
+## Уметь работать на уровне SELECT/INSERT/UPDATE/DELETE в SQL базах данных
+[product.go](internal%2Frepository%2Fproduct.go)
+
+## Уметь работать в RabbitMQ/Kafka на уровне чтения и отправки вручную сообщений
 
 # FulltextSearch
     Используется индекс GIN
     - Механизм похож на B-Tree, только в элементах индекса хранится не ссылка, а набор ссылок
+[index_gin_fulltext_Search.sql](..%2F..%2F..%2F..%2FLibrary%2FApplication%20Support%2FJetBrains%2FGoLand2023.2%2Fconsoles%2Fdb%2F8459f2b0-4f4e-45ee-af12-e84b39a58b64%2Findex_gin_fulltext_Search.sql)
 
 # Индексы в postgreSQL
 ## B-tree
@@ -33,7 +55,7 @@
     - Идеальный пример это map в Golang
     - Бакеты
     - Коллизия
-    - Допустимые типа ключа - срезы, мапы, функциии
+    - Допустимые типы ключа - срезы, мапы, функциии
 ## GIN
     - Используется для полнотекстового поиска
     - Механизм похож на B-Tree, только в элементах индекса хранится не ссылка, а набор ссылок
@@ -42,7 +64,7 @@
       а для некоторых типов данных(например, геоданные) эти операторы бесполезны. Для этого есть индекс Gist
 
 # Логирование в pgx
-[gen_swag.go](internal%2Fhandler%2Fgen_swag.go)
+[rest.go](internal%2Fhandler%2Frest.go)
 
 # goroutine
     Goroutine это поток, запускаемый рантаймом
@@ -50,6 +72,7 @@
     - Легковесный - запускаются в потоке самой программы, а не в ОС
     - Отсутствие лимитов на кол-во горутин
     - Конкурентность
+[goroutine.go](internal%2Fusecase%2Fgoroutine.go)
 
 ## Общение между goroutine-ами
     - Каналы - буферизованные и не буферизованные
@@ -148,10 +171,12 @@
 ## Сквозное прокидывание request_id по каждому запросу
 
 # Devops
-## Envoy(настройка ratelimit и авторизацию через микросервис    
+## Envoy(настройка ratelimit и авторизацию через микросервис
     * показать из order-dev
 
 # Разделять запуск приложение с помощью команд и Обрабатывать флаги запуска
 [goroutine.go](cmd%2Fgoroutine.go)
 
 
+ы
+s
