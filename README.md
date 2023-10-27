@@ -176,7 +176,3 @@ https://comptest.youtrack.cloud/admin/vcs
 
 # Разделять запуск приложение с помощью команд и Обрабатывать флаги запуска
 [goroutine.go](cmd%2Fgoroutine.go)
-
-
-ы
-s
