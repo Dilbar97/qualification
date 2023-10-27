@@ -9,13 +9,13 @@ https://comptest.youtrack.cloud/admin/vcs
 # Git
 ## Уметь работать с историей git'a
 ## Схлопывать в один все коммиты в ветке
-    - squash
-    - rebase -i
+    - git merge --squash
+    - git rebase -i
     - ammend
 ## git cherry-pick
-## git submodule
+## git submodule // TODO Раскрыть команды для добавления, обновления сабмодуля
 [.gitmodules](.gitmodules)
-## git bare для полной копии
+## git bare для полной копии // TODO Раскрыть команды для создания и клонирования bare проекта
 
 # Инфраструктура
 ## Знать k8s на уровне Namespace/Deployment/Service/Pod
@@ -135,6 +135,10 @@ https://comptest.youtrack.cloud/admin/vcs
 ## Реализовывать Stream на базе gRPC
 [stream.proto](qualification_proto%2Fproto%2Fstream.proto)
 
+# Тестирование // TODO добавить тесты
+## Пистать Unit тесты
+## Проводить функциональное тестирование
+
 # RabbitMQ
 ## exchange
     - это прослойка между клиентом и очередью
@@ -150,7 +154,7 @@ https://comptest.youtrack.cloud/admin/vcs
     - по аргументу или хедеру определяет в какую очередь гнать
 ## Publisher Confirms
     После паблиша сообщения, паблишер вешает слушатель на канал и ждёт там подтверждения от сервера, что сообщение получили
-## RPC pattern
+## RPC pattern // TODO раскрыть этот метод
 ## DeadLetter
     - Это exchange, куда попадают сообщения если:
         - консюмер признал сообщение негативным(или некорректным) - nack и requeue = false
