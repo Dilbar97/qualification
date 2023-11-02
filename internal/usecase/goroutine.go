@@ -61,35 +61,21 @@ func gorWithChannel() {
 			fmt.Println(val)
 		}
 	}*/
-
-	// гоуртина для чтения из канала
-	/*go func(gorValues chan string) {
-		for {
-			select {
-			case val := <-gorValues:
-				fmt.Println(val)
-			}
-		}
-	}(gorValues)*/
 }
 
 func gorWithWG() {
 	var wg sync.WaitGroup
-	gorNums := make(chan int)
 
 	for i := 0; i < 10; i++ {
 		wg.Add(1)
 		go func(i int, wg *sync.WaitGroup) {
 			defer wg.Done()
-			gorNums <- i
+			fmt.Println(fmt.Sprintf("Горутина №%d", i))
 		}(i, &wg)
 	}
 
-	for gorNum := range gorNums {
-		fmt.Println(fmt.Sprintf("Горутина №%d", gorNum))
-	}
-
 	wg.Wait()
+	return
 }
 
 type Container struct {

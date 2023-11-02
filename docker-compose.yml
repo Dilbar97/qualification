@@ -12,6 +12,7 @@ services:
       - "5455:5432"
   redis:
     image: redis:latest
+    container_name: qual_rd
     restart: always
     ports:
       - "6380:6379"
@@ -19,3 +20,18 @@ services:
       - REDIS_PASSWORD=secret
       - REDIS_PORT=6379
       - REDIS_DATABASES=0
+  jaeger:
+    image: jaegertracing/all-in-one
+    container_name: qual_jg
+    ports:
+      - "14268:14268"
+      - "16686:16686"
+  rabbit:
+    container_name: qual_rb
+    image: rabbitmq:3.9-management
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    ports:
+      - "5673:5672"
+      - "15673:15672"

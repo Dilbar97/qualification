@@ -41,30 +41,30 @@ func (es *es) SearchDoc(ctx context.Context, productName string) []model.Product
 
 	queryStr, err := searchSource.Source()
 	if err != nil {
-		fmt.Println(fmt.Errorf("[esclient][GetResponse]err during query marshal=%w", err))
+		fmt.Println(fmt.Errorf("err during query marshal: %w", err))
 		return nil
 	}
 
 	queryJs, err := json.Marshal(queryStr)
 	if err != nil {
-		fmt.Println(fmt.Errorf("[esclient][GetResponse]err during query marshal=%w", err))
+		fmt.Println(fmt.Errorf("err during query marshal: %w", err))
 		return nil
 	}
 
-	fmt.Println("[esclient]Final ESQuery=\n", string(queryJs))
+	fmt.Println("Final ESQuery=\n", string(queryJs))
 
 	es.client.Search().Index("products").AllowPartialSearchResults(true).SearchSource(searchSource)
 	searchService := es.client.Search().Index("products").SearchSource(searchSource)
 	searchResult, err := searchService.Do(ctx)
 	if err != nil {
-		fmt.Println("[ProductsES][GetPIds]Error=", err)
+		fmt.Println(fmt.Errorf("search err: %w", err))
 		return nil
 	}
 
 	for _, hit := range searchResult.Hits.Hits {
 		var product model.Product
 		if err = json.Unmarshal(hit.Source, &product); err != nil {
-			fmt.Println("[Getting Products][Unmarshal] Err=", err)
+			fmt.Println(fmt.Errorf("unmarshal err: %w", err))
 			continue
 		}
 
@@ -72,7 +72,7 @@ func (es *es) SearchDoc(ctx context.Context, productName string) []model.Product
 	}
 
 	if err != nil {
-		fmt.Println("Fetching product fail: ", err)
+		fmt.Println(fmt.Errorf("fetching err: %w", err))
 		return nil
 	}
 
